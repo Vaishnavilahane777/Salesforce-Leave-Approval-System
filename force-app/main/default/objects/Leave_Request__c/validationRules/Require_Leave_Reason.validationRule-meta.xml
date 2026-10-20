@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Leave_Reason</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISBLANK(Reason__c),
+    NOT(ISPICKVAL(Leave_Status__c, &quot;Draft&quot;))
+)</errorConditionFormula>
+    <errorDisplayField>Reason__c</errorDisplayField>
+    <errorMessage>Please enter a reason before submitting your leave request.</errorMessage>
+</ValidationRule>
